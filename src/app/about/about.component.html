@@ -1,5 +1,12 @@
 <button (click)="onContact()">Contact</button>
 <button (click)="onAbout()">Home</button>
+
+<div>
+<ul (click) = routeWithQueryParams($event)>
+    <li>{{ queryParams }}</li>
+    
+</ul>
+</div>
 <button (click)="onSwitch()"> Switch </button>
 <nav>
 <ul>
