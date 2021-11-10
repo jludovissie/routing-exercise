@@ -1,0 +1,14 @@
+<button (click)="onContact()">Contact</button>
+<button (click)="onAbout()">Home</button>
+<button (click)="onSwitch()"> Switch </button>
+<nav>
+<ul>
+  <li><a routerLink="susan">Susan</a></li>
+  <li><a routerLink="bob">Bob</a></li>
+</ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+<app-bob *ngIf="!switchMode"></app-bob>
+<app-susan *ngIf="switchMode"></app-susan>
