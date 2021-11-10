@@ -11,19 +11,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { BobComponent } from './about/bob/bob.component';
 import { SusanComponent } from './about/susan/susan.component';
 import { WildcardComponent } from './wildcard/wildcard.component';
+import { PassingComponent } from './passing/passing.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'contact' , component: ContactComponent},
-  {path: 'home' , component: HomeComponent},
-  {path: '**', component: WildcardComponent} ,
- 
-  {path:'about' , component: AboutComponent, 
-   children:[
-    {path:'bob', component: BobComponent}, 
-    {path:'susan' , component: SusanComponent}
-]},
+  {path: 'contact/:id/:name', component: ContactComponent},
 
+  {path:'about', component: AboutComponent,  
+      children:[
+    {path: 'bob', component: BobComponent},
+    {path: 'susan', component: SusanComponent}
+  ] },
+
+  {path: 'home' , component: HomeComponent},
+  {path: '**', component: WildcardComponent},
+
+  {path:'passing', component: PassingComponent},
+  {path: 'contact/:id/edit', component: PassingComponent}
 
 ];
 
@@ -39,7 +44,8 @@ const appRoutes: Routes = [
                   AboutComponent, 
                   BobComponent,
                   SusanComponent ,
-                  WildcardComponent ],
+                  WildcardComponent,
+                  PassingComponent ],
 
   bootstrap:    [ AppComponent ]
 })

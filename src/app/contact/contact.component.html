@@ -1,3 +1,9 @@
-<p>
-contact works!
-</p>
+<p> contact works!</p> 
+<hr>
+<div> {{ user.name }} {{ user.id }} </div>
+<hr>
+
+<a [routerLink]= "['/contact', 10, 'Susan']"> Load Susan</a>
+<hr>
+<a [routerLink]= "['/contact', 5 , 'edit ']" 
+[queryParams]="{allowEdit: '1'}" > Load Passing </a>

@@ -12,13 +12,8 @@ export class AboutComponent implements OnInit {
 
   constructor(private router:Router ,
               private route: ActivatedRoute) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      this.idx = +params['id'];
-      
-      });
-  }
   onContact(){
     this.router.navigate(['contact']), { relativeTo: this.route  };
   }
@@ -27,13 +22,5 @@ export class AboutComponent implements OnInit {
   }
   onSwitch(){
     this.switchMode = !this.switchMode
-  }
-  routeWithQueryParams($event) {
-    const selectedRoute = $event.target.innerHTML;
-    if (selectedRoute == 'bob') {
-      this.router.navigate(['/bob'], { queryParams: { val: 'Bob' }});
-    } else {
-      this.router.navigate(['/susan'], { queryParams: { val: 'Susan' }});
-    }
   }
 }
